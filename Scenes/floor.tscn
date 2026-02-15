@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://daup3whagkygu"]
+
+[ext_resource type="Shader" uid="uid://bmuwk8g5hffqj" path="res://floor.gdshader" id="1_agfsv"]
+[ext_resource type="Texture2D" uid="uid://du85j5i14su3l" path="res://Assets/base.png" id="1_nvnu3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjf51"]
+shader = ExtResource("1_agfsv")
+shader_parameter/speed = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agfsv"]
+size = Vector2(336, 112)
+
+[node name="Floor" type="StaticBody2D" unique_id=251861901]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866219551]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wjf51")
+texture = ExtResource("1_nvnu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=664598921]
+shape = SubResource("RectangleShape2D_agfsv")

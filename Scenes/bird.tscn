@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://enka6wakk8k7"]
+
+[ext_resource type="Texture2D" uid="uid://b8vvsfkdcy6gt" path="res://Assets/yellowbird-downflap.png" id="1_dnvpi"]
+[ext_resource type="Script" uid="uid://bsoix1lp7kexx" path="res://Scripts/bird.gd" id="1_vl8r2"]
+[ext_resource type="Texture2D" uid="uid://cy8chdmkymo6x" path="res://Assets/yellowbird-midflap.png" id="2_vl8r2"]
+[ext_resource type="Texture2D" uid="uid://c5mx0gsdgghs0" path="res://Assets/yellowbird-upflap.png" id="3_rr33m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xf4a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dnvpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vl8r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rr33m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnvpi"]
+radius = 12.0
+height = 32.0
+
+[node name="Bird" type="CharacterBody2D" unique_id=905391252 groups=["bird"]]
+script = ExtResource("1_vl8r2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2115987458]
+sprite_frames = SubResource("SpriteFrames_xf4a6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=919430422]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dnvpi")

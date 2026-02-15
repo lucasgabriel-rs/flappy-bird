@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://d1uqtum4t7uku"]
+
+[ext_resource type="Texture2D" uid="uid://b3jrvul7icc5s" path="res://Assets/background-day.png" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://cw2ye2lp1brb6" path="res://Assets/taptap.png" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://cg1c2iqbptv5o" path="res://Assets/gameover.png" id="3_kry3j"]
+[ext_resource type="FontFile" uid="uid://b8gnil6y8jh36" path="res://Assets/Kenney Blocks.ttf" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://enka6wakk8k7" path="res://Scenes/bird.tscn" id="5_6bp64"]
+[ext_resource type="PackedScene" uid="uid://daup3whagkygu" path="res://Scenes/floor.tscn" id="6_344ge"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ynf5e"]
+font = ExtResource("4_21xkr")
+font_size = 25
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node" unique_id=357466255]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1181345711]
+layer = -1
+
+[node name="Bg" type="TextureRect" parent="Background" unique_id=1497384780]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8gbba")
+
+[node name="TapTap" type="TextureRect" parent="." unique_id=543812981]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -74.5
+offset_right = 92.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_jjvhh")
+
+[node name="GameOver" type="TextureRect" parent="." unique_id=1510418852]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 10.0
+offset_right = 96.0
+offset_bottom = 52.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_kry3j")
+
+[node name="Scoreboard" type="Label" parent="." unique_id=1820110968]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -121.5
+offset_right = 20.0
+offset_bottom = -82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ynf5e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bird" parent="." unique_id=905391252 instance=ExtResource("5_6bp64")]
+position = Vector2(87, 324)
+
+[node name="Floor" parent="." unique_id=251861901 instance=ExtResource("6_344ge")]
+position = Vector2(139, 466)
