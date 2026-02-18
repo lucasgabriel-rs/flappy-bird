@@ -4,8 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+signal justDied
+
 var didStartGame: bool = false
 var isDead: bool = false
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -28,5 +32,6 @@ func _physics_process(delta: float) -> void:
 func die() -> void:
 	if not isDead:
 		isDead = true
-		print("Morreu!")
+		anim.stop()
+		emit_signal("justDied")
 	

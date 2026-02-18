@@ -88,4 +88,5 @@ scale = Vector2(54, 42)
 shape = SubResource("RectangleShape2D_6bp64")
 action = "jump"
 
+[connection signal="justDied" from="Bird" to="." method="_on_bird_just_died"]
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
